@@ -1,0 +1,74 @@
+{% extends "../layouts/base.twig" %}
+{% block style %}
+	<link rel="stylesheet" href="./assets/css/addemployer.css">
+{% endblock %}
+{% block title %}
+	<title>{{title}}
+	</title>
+{% endblock %}
+{% block main %}
+	<main>
+		<section>
+			<div>
+				<h2>
+					{% if employer %}
+						Modifier un employé
+					{% else %}
+						Ajouter un employé
+					{% endif %}
+				</h2>
+			</div>
+			<div>
+				<form method="post" {% if employer %} action="/updateEmployer/{{ employer.id }}" {% else %} action="/addemployer" {% endif %}>
+
+					<div>
+						<label for="gender">Civilité</label>
+						<select name="gender" id="gender">
+							<option>Choisissez une option</option>
+							<option value="MR" {% if employer.gender == 'MR' %} selected {% endif %}>Monsieur</option>
+							<option value="MME" {% if employer.gender == 'MME' %} selected {% endif %}>Madame</option>
+						</select>
+					</div>
+					<div>
+						<label for="firstName">Entrez votre Nom</label>
+						<input type="text" name="firstName" id="firstName" value={{ employer.firstName }}>
+					</div>
+					<div>
+						<label for="lastName">Entrez votre prenom</label>
+						<input type="text" name="lastName" id="lastName" value={{ employer.lastName }}>
+					</div>
+					<div>
+						<label for="age  ">Entrez votre age</label>
+						<input type="number" name="age" id="age" value={{ employer.age }}>
+					</div>
+					<div>
+						<label for="mail">Entrez votre email</label>
+						<input type="email" name="mail" id="mail" value={{ employer.mail }}>
+					</div>
+					<div>
+						<label for="password">entrer votre mot de passe</label>
+						<input type="password" name="password" id="password">
+					</div>
+					<div>
+						<label for="confirm_password">confimer le mot de passe</label>
+						<input type="password" name="confirm_password" id="confirm_password">
+						{% if error %}
+							{{error.confirm_password}}
+						{% endif %}
+
+					</div>
+
+					<div>
+						<button type="submit">
+							{% if employer %}
+								Modifier
+							{% else %}
+								Créer un utilisateur
+							{% endif %}
+						</button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+{% endblock %}

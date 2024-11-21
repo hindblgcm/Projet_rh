@@ -1,0 +1,55 @@
+{% extends "../layouts/base.twig" %}
+{% block style %}
+	<link rel="stylesheet" href="./assets/css/addemployer.css">
+{% endblock %}
+{% block title %}
+	<title>{{title}}
+	</title>
+{% endblock %}
+{% block main %}
+
+	<main>
+		<section>
+			<div>
+				<h2></h2>
+			</div>
+			<div>
+            {% if employer %}<form method="post" action="/givecomputeur">{% endif %}
+				
+
+					<div>
+						<label for="employerID">employer</label>
+						<select name="employerID" id="employerID">
+							<option>Choisissez une option</option>
+							{% for employe in employer %}
+								<option value={{employe.id }}>{{employe.firstName}},{{employe.lastName}} </option>
+							{% endfor %}
+						</select>
+					</div>
+                    <div>
+						<label for="ordinateurID">ordinateur</label>
+						<select name="ordinateurID" id="ordinateurID">
+							<option>Choisissez une option</option>
+							{% for ordi in ordinateur %}
+
+								<option value={{ordi.id }}>{{ordi.mac}},{{ordi.modele}} </option>
+
+							{% endfor %}
+
+ 
+						</select>
+					</div>
+
+					<div>
+						<button type="submit">
+
+							Donner un ordinateur
+
+						</button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+
+{% endblock %}

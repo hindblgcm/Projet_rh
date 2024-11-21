@@ -1,0 +1,123 @@
+/* Général */
+body {
+    font-family: 'Times New Roman', serif;
+    color: #333;
+  
+}
+
+main {
+   
+    padding: 50px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #2d3436;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Section des employés et ordinateurs */
+#employes article, #computers article {
+    display: flex;
+    flex-direction: column;
+ 
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px; /* add some margin between cards */
+  }
+
+
+
+#employe_card{
+    background-color: #9fb8e0;
+    border: 2px solid #b2bec3;
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+
+}
+
+#computer_card {
+    background-color: #e3b5b5;
+    border: 2px solid #b2bec3;
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out; 
+}
+.one,.two,.tree{
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+
+#employe_card:hover, #computer_card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #2d3436;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    color: #636e72;
+    margin-bottom: 10px;
+}
+
+/* Boutons Modifier / Supprimer */
+a.modifier, a.supprimer {
+    display: inline-block;
+    padding: 12px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+a.modifier {
+    background-color: #6c5ce7;
+}
+
+a.supprimer {
+    background-color: #e74c3c;
+}
+
+a:hover {
+    transform: scale(1.05);
+}
+
+a.modifier:hover {
+    background-color: #5e5ae5;
+    box-shadow: 0 3px 15px rgba(108, 92, 231, 0.5);
+}
+
+a.supprimer:hover {
+    background-color: #c0392b;
+    box-shadow: 0 3px 15px rgba(231, 76, 60, 0.5);
+}
+
+/* Effets de luxe supplémentaires */
+#employe_card, #computer_card {
+   
+    border: 2px solid #dfe6e9;
+}
+
+h2 {
+    font-family: 'Garamond', serif;
+    color: #1c1c1c;
+}
+
+p {
+    font-family: 'Georgia', serif;
+    color: #636e72;
+}

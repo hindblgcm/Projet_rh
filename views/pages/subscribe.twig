@@ -1,0 +1,50 @@
+{% extends "../layouts/base.twig" %}
+{% block style %}
+	<link rel="stylesheet" href="./assets/css/subscribe.css">
+{% endblock %}
+{% block title %}
+	<title>{{title}}
+	</title>
+{% endblock %}
+{% block main %}
+	<main>
+		<section>
+			<div>
+				<h2>
+					formulaire d'Inscription
+				</h2>
+			</div>
+			<div>
+				<form action="/subscribe" method="post">
+					<div>
+						<label for="siret">Entrez votre siret</label>
+						<input type="text" name="siret" id="siret">
+						
+					</div>
+					<div>
+						<label for="raison_social">Entrez votre raison social</label>
+						<input type="text" name="raison_social" id="raison_social">
+					</div>
+
+					<div>
+						<label for="password">entrer votre mot de passe</label>
+						<input type="password" name="password" id="password">
+					</div>
+
+					<div>
+						<label for="confirm_password">confimer le mot de passe</label>
+						<input type="password" name="confirm_password" id="confirm_password">
+						{% if error %}
+							{{error.confirm_password}}
+						{% endif %}
+
+					</div>
+
+					<div>
+						<button type="submit">Création d'un entreprise</button>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+{% endblock %}

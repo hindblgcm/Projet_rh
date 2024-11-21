@@ -1,0 +1,51 @@
+{% block style %}
+
+	<link rel="stylesheet" href="/assets/css/header.css">
+
+{% endblock %}
+
+<header>
+	<div>
+		<a href="/home.twig">
+			<img src="/assets/img/logo.jpg" alt="logo">
+		</a>
+
+	</div>
+
+
+	<nav>
+		<ul>
+			{% if entreprise %}
+				<li>
+					<a href="/addemployer" class="btn">Ajouter un employer</a>
+				</li>
+				<li>
+					<a href="/addcomputeur" class="btn">Ajouter un ordinateur</a>
+				</li>
+				<li>
+					<a href="/givecomputeur" class="btn">Donner un ordinateur</a>
+				</li>
+			<li>
+					<a href="/computers" class="btn">Retirer un ordinateur</a>
+				</li>
+					<li>
+					<a href="/addtask" class="btn">Ajouter une tache</a>
+				</li>
+				<li>
+					<a href="/logout" id="deconnexion">Deconnexion</a>
+				</li>
+			{% else %}
+				<li>
+					<a href="/subscribe">Inscription</a>
+				</li>
+				<li>
+					<a href="/login">connexion</a>
+				</li>
+
+			{% endif %}
+     
+
+		</ul> 
+	</nav>
+</header>
+

@@ -1,0 +1,11 @@
+model Ordinateur {
+    id           Int        @id @default(autoincrement())
+    mac String @db.VarChar(255)@unique
+    modele String @db.VarChar(255)
+
+    //ctte relation permet de lier un employer à un ordinateur 
+    employer Employer? 
+    entreprise   Entreprise @relation(fields: [entrepriseID], references: [id])
+    entrepriseID Int
+
+}

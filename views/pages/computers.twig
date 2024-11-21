@@ -1,0 +1,22 @@
+{% extends "../layouts/base.twig" %}
+{% block style %}
+	<link rel="stylesheet" href="./assets/css/home.css">
+{% endblock %}
+{% block title %}
+	<title>{{title}}</title>
+{% endblock %}
+{% block main %}
+	<main>
+
+
+		{% for ordinateur in ordinateurs %}
+        
+			<article id="computer_card">
+				<h2>{{ ordinateur.mac }}</h2>
+				<h2>{{ ordinateur.modele }}</h2>
+                <a href="/removecomputer/{{ ordinateur.id }}">effacer</a>
+				
+			</article>
+		{% endfor %}
+	</main>
+{% endblock %}

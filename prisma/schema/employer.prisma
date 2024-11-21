@@ -1,0 +1,22 @@
+model Employer {
+    id                Int        @id @unique@default(autoincrement())
+    firstName         String     @db.VarChar(255)
+    lastName          String     @db.VarChar(255)
+    age               Int
+    mail              String     @unique @db.VarChar(255)
+    password_employer String     @db.VarChar(255)
+    gender          Gender
+    entreprise        Entreprise @relation(fields: [entrepriseId], references: [id])
+    entrepriseId      Int
+//cette relatio permet à un employer d'avoir un oridnateur 
+    computeur Ordinateur? @relation(fields: [computeurID],references: [id])
+    computeurID Int? @unique
+    tasks Task[]
+
+}
+
+enum Gender {
+    MR
+    MME
+}
+ 

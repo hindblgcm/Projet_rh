@@ -1,0 +1,63 @@
+{% extends "../layouts/base.twig" %}
+{% block style %}
+	<link rel="stylesheet" href="./assets/css/home.css">
+{% endblock %}
+{% block title %}
+	<title>{{title}}</title>
+{% endblock %}
+{% block main %}
+	<main>
+
+		<div id="employes">
+			<h1>Mes employés</h1>
+			{% for employe in entreprise.employes %}
+				<article id="employe_card">
+					<div class="one">
+						<h2>{{ employe.gender }}</h2>
+						<h2>{{ employe.firstName }}</h2>
+						<h2>{{ employe.lastName }}</h2>
+						<p>{{ employe.age }}</p>
+						<p>{{ employe.mail }}</p>
+					</div>
+					<div class="two">
+						<p>ordinateur assigné :
+							{{ employe.computeur.modele }}
+
+						</p>
+					</div>
+
+					<div class="tree">
+						<a href="/updateEmployer/{{ employe.id }}" class="modifier">Modifier</a>
+						<a href="/deleteEmployer/{{ employe.id }}" class="supprimer">Supprimer</a>
+					</div>
+
+				</article>
+			{% endfor %}
+		</div>
+
+		<div id="computers">
+			<h1>Les ordinateurs de l'entreprise</h1>
+			{% for computer in entreprise.ordinateurs %}
+				<article id="computer_card">
+					<div class="one">
+					<h2>Modele : {{ computer.modele }}</h2>
+						<p> Numero de série : {{ computer.mac }}</p>
+						
+					</div>
+					<div class="two">
+						<p>L'ordinateur est pris par :
+							{{ computer.employer.firstName}}
+							{{ computer.employer.lastName}}
+						</p>
+					</div>
+					<div class="tree">
+						<a href="/updateComputer/{{ computer.id }}" class="modifier">Modifier</a>
+						<a href="/deleteComputer/{{ computer.id }}" class="supprimer">Supprimer</a>
+					</div>
+				</article>
+
+			</article>
+		{% endfor %}
+	</div>
+
+</main>{% endblock %}

@@ -1,0 +1,11 @@
+model Entreprise {
+    id            Int      @id @default(autoincrement())
+    siret         String   @unique @db.VarChar(255)
+    raison_social String   @db.VarChar(255)
+    password      String   @db.VarChar(255)
+    createdAt     DateTime @default(now())
+    employes Employer[]
+    ordinateurs Ordinateur[]
+    task Task[]
+}
+

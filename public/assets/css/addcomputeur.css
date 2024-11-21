@@ -1,0 +1,85 @@
+/* Fichier: beige.css */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 450px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #2f4f4f; /* Gris foncé */
+    font-family: 'Georgia', serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    color: #2f4f4f;
+    font-family: 'Georgia', serif;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #b38b6d; /* Couleur beige */
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #b38b6d; /* Couleur beige */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8c6e52; /* Couleur beige foncé */
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    section {
+        width: 100%;
+        padding: 15px;
+    }
+}

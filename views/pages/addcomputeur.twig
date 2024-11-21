@@ -1,0 +1,46 @@
+{% extends "../layouts/base.twig" %}
+{% block style %}
+	<link rel="stylesheet" href="./assets/css/addcomputeur.css">
+{% endblock %}
+{% block title %}
+	<title>{{title}}
+	</title>
+{% endblock %}
+{% block main %}
+
+	<main>
+		<section>
+			<div>
+				<h2></h2>
+			</div>
+			<div>
+
+				<form method="post" {% if ordinateur %} action="/updateComputer/{{ ordinateur.id }}" {% else %} action="/addcomputeur" {% endif %}>
+
+					<div>
+						<label for="mac">Entrez votre Mac</label>
+						<input type="text" name="mac" id="mac" value={{ ordinateur.mac }}>
+					</div>
+					<div>
+						<label for="modele">Entrez votre modele</label>
+						<input type="text" name="modele" id="modele" value={{ ordinateur.modele }}>
+					</div>
+
+					<div>
+						<button type="submit">
+							{% if ordinateur %}
+								Modifier
+							{% else %}
+								cree un ordinateur
+							{% endif %}
+						</button>
+					</div>
+
+				</form>
+
+
+			</div>
+		</section>
+	</main>
+
+{% endblock %}

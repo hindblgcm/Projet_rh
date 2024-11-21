@@ -4,9 +4,10 @@ const employerRouter = require("./router/employerRouter")
 const entrepriseRouter=require("./router/entrepriseRouter")
 const ordinateurRouteur=require("./router/ordinateurRouter")
 const taskRouter = require("./router/taskRouter")
-
+require("dotenv").config()
 
 const app = express()
+
 app.use(express.static("./public"))
 app.use(express.urlencoded({extended:true}))
 app.use(session({
@@ -24,7 +25,7 @@ app.use(ordinateurRouteur)
 app.use(taskRouter)
 
 
-app.listen(3000,()=>{ 
+app.listen(process.env.PORT,()=>{ 
     console.log("ecoute sur le port 3000");
     
 })     
